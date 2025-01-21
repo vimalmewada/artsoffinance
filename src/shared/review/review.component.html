@@ -1,0 +1,51 @@
+<div class="rts-client-feedback">
+    <div class="container">
+        <div class="row">
+            <!-- start testimonials area -->
+            <div class="col-lg-7">
+                <div class="rts-title-area reviews text-start pl--30 pt--70">
+                    <p class="pre-title">
+                        Our Testimonials
+                    </p>
+                    <h2 class="title">Student’s Feedbacks</h2>
+
+                    <!-- swiper area start -->
+                    <div class="swiper mySwipertestimonial">
+                        <div class="swiper-wrapper">
+                            <!-- Display the current review -->
+                            <div class="swiper-slide">
+                                <div class="testimonial-inner">
+                                    <p class="disc text-start">
+                                        “{{ getCurrentReview().review }}”
+                                    </p>
+                                    <div class="testimonial-bottom-one">
+                                        <div class="thumbnail">
+                                            <img [src]="getCurrentReview().image" alt="business-testimonials">
+                                        </div>
+                                        <div class="details">
+                                            <a href="#">
+                                                <h5 class="title">{{ getCurrentReview().name }}</h5>
+                                            </a>
+                                            <span>{{ getCurrentReview().role }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-button-next" (click)="nextReview()"></div>
+                        <div class="swiper-button-prev" (click)="prevReview()"></div>
+                    </div>
+                    <!-- swiper area end -->
+                </div>
+            </div>
+            <!-- end testimonials area -->
+            <!-- images area -->
+            <div class="col-lg-5">
+                <div class="rts-test-one-image-inner">
+                    <img src="assets/images/testimonials/01.png" alt="business_testimobials">
+                </div>
+            </div>
+            <!-- image area end -->
+        </div>
+    </div>
+</div>

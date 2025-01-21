@@ -1,0 +1,129 @@
+<app-nav-bar></app-nav-bar>
+<!-- start breadcrumb area -->
+<div class="rts-breadcrumb-area bg_image" [style.background-image]="'url(assets/img/stock10.jpg)'">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 breadcrumb-1">
+                <h1 class="title" *ngIf="mentor.name">{{mentor.name}} <br>profile</h1>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="bread-tag">
+                    <a href="/home">Home</a>
+                    <span> / </span>
+                    <a href="#" class="active">{{mentor.name}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end breadcrumb area -->
+
+<!-- rts-team details area Start-->
+<div class="rts-team-details rts-section-gap">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-xl-6 col-lg-12 col-md-12">
+                <div class="details-thumb">
+                    <img src="{{mentor?.img}}" alt="">
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-12 col-md-12 pl--35 pl_sm--15">
+                <div class="details-right-inner">
+                    <div class="title-area">
+                        <span class="pre-title">
+                            {{mentor?.position}}
+                        </span>
+                        <h3 class="title">{{mentor?.name}}</h3>
+                    </div>
+                    <p class="disc">
+                        {{mentor?.description}}
+                    </p>
+                    <!-- <div class="team-details-support-wrapper">
+                        <i class="far fa-envelope"></i>
+                        <div class="support-innner">
+                            <span>Email Address</span>
+                            <a href="#">
+                                <h5 class="title">support@david.com</h5>
+                            </a>
+                        </div>
+                    </div> -->
+                    <!-- <div class="key-skills-wrapper single-wized">
+                        <h6 class="title">Key Skills</h6>
+                        <ul class="key-skills-list">
+                            <li>Skill 1</li>
+                            <li>Skill 2</li>
+                        </ul>
+                    </div> -->
+                    <div class="left-area single-wized">
+                        <h5 class="title" style="position: relative; margin-top: 2px; display: inline-block;">Key Skills
+                            <span style="position: absolute; bottom: -2px; left: -2px; width: calc(100% + 4px); height: 2px; background-color: orange;"></span>
+                        </h5>
+                        
+
+
+
+                        <div class="details">
+                            <ul class="key-skills-list" style="list-style: none; padding: 0; margin: 0;">
+                                <li style="font-size: 18px; color: #333; margin-bottom: 8px; position: relative; padding-left: 25px; font-family: Arial, sans-serif;" *ngFor="let skill of mentor?.keySkills">
+                                 {{skill}}
+                                    <span style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background-color: orange; border-radius: 50%;"></span>
+                                </li>
+                               
+                            </ul>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- rts-team details area ENd -->
+
+
+<!-- rts skills area end -->
+<section class="portfolio-area style-4 pb--120 pt_xs--60 pt_xs--60">
+    <div class="container">
+        <div class="row mb--5">
+            <div class="col-12">
+                <div class="rts-title-area gallery text-start">
+                    <p class="pre-title">
+                        
+                    </p>
+                    <h2 class="title">Certificates</h2>
+                </div>
+            </div>
+        </div>
+
+<div class="tab-content-area mt_sm--30">
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <!-- tab product area -->
+            <div class="row g-5">
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12" *ngFor="let certificate of mentor?.certificates">
+                    <!-- single -product area -->
+                    <div class="rts-product-one">
+                        <div class="thumbnail-area">
+                            <img src="{{certificate?.image}}" alt="Business_Finbiz">
+                            <a class="rts-btn btn-primary rounded"  href="{{certificate.pdfLocation}}" target="_blank" rel="noopener noreferrer"><i
+                                    class="far fa-arrow-right"></i></a>
+                        </div>
+                        <div class="product-contact-wrapper">
+                            <!-- <span>Business Solution</span> -->
+                            <a   [href]="certificate.pdfLocation" target="_blank" rel="noopener noreferrer">
+                                <h6 class="title">{{certificate.name}}</h6>
+                            </a>
+                            <!-- <p class="disc">
+                                Ultricies nequenulla eros sapien cubilia nostra viverra integer
+                                ornare prointa
+                            </p> -->
+                        </div>
+                    </div>
+                    <!-- single -product area End -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</section>

@@ -1,0 +1,48 @@
+<app-nav-bar></app-nav-bar>
+<!-- start breadcrumb area -->
+<div class="rts-breadcrumb-area breadcrumb-bg bg_image">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 breadcrumb-1">
+                <h1 class="title">{{sectionName.toUpperCase() }} COURSE</h1>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="bread-tag">
+                    <a href="index.html">Home</a>
+                    <span> / </span>
+                    <a href="#" class="active">{{sectionName.toUpperCase()}} </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end breadcrumb area -->
+
+
+<!-- our service area start -->
+<div class="rts-service-area rts-section-gapTop pb--200 service-two-bg bg_image">
+    <div class="container">
+        <div class="row g-5 service padding-controler">
+            <!-- single service area -->
+            <div class="col-xl-4 col-md-6 col-sm-12 col-12 pb--140 pb_md--100" *ngFor="let course of COURSE_LIST_BY_SECTION; let i = index">
+                <div class="service-two-inner"  >
+                    <a [routerLink]="['/courses',sectionName, course.id]" class="thumbnail"   [ngClass]="'thumbnail-' + (i + 1)"><img src={{course.serviceDetails.thumbnailSrc}}
+                            alt="Business_image"></a>
+                    <div class="body-content">
+                        <div class="hidden-area">
+                            <a [routerLink]="['/courses',sectionName, course.id]">
+                            <h5 class="title">{{course.headline}}</h5>
+                            </a>
+                            <p class="dsic">
+                              {{course?.serviceDetails?.description | slice:0:course?.serviceDetails?.description.split(' ').slice(0, 10).join(' ').length }}
+                            </p>
+                            <a class="rts-read-more-two color-primary" [routerLink]="['/courses',sectionName, course.id]">Read More<i
+                                    class="far fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- single service area end-->
+        </div>
+    </div>
+</div>
