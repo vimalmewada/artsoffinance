@@ -1,6 +1,6 @@
 <app-nav-bar></app-nav-bar>
 <!-- start breadcrumb area -->
-<div class="rts-breadcrumb-area breadcrumb-bg bg_image">
+<!-- <div class="rts-breadcrumb-area breadcrumb-bg bg_image">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 breadcrumb-1">
@@ -15,5 +15,53 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- end breadcrumb area -->
+<div class="rts-client-area ptb--100 client-bg">
+    <div class="container">
+        <div class="row">
+            <h4 class="title">Campus Gallery</h4>
+            <div class="col-12">
+                <div class="client-two-wrapper">
+                <button 
+  class="filter-button rts-btn" 
+  [ngClass]="{'btn-white': selectedFilter !== 'all', 'btn-primary-3': selectedFilter === 'all'}"
+  [class.active]="selectedFilter === 'all'"
+  (click)="setFilter('all')"
+>
+  All
+</button>
+
+<button 
+  *ngFor="let section of gallerySections" 
+  class="filter-button rts-btn" 
+  [ngClass]="{
+    'btn-white': selectedFilter !== section.title, 
+    'btn-primary-3': selectedFilter === section.title
+  }"
+  [class.active]="selectedFilter === section.title"
+  (click)="setFilter(section.title)"
+>
+  {{ section.title }}
+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="gallery-container">    
+    <div *ngFor="let section of filteredSections" class="gallery-section">
+      <h3 class="section-title">{{ section.title }}</h3>
+      <div class="image-grid">
+        <div *ngFor="let image of section.images" class="image-card">
+          <img [src]="image.url" [alt]="image.caption" class="gallery-image" loading="lazy">
+          <p class="image-caption">{{ image.caption }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="filteredSections.length === 0" class="no-results">
+      <p>No images found for the selected category.</p>
+    </div>
+  </div>
+
