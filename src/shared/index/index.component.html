@@ -1,4 +1,6 @@
-<router-outlet></router-outlet>
-<div class="rts-footer-area footer-one rts-section-gapTop bg-footer-one">
+<div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+<div class="rts-footer-area footer-one rts-section-gapTop bg-footer-one" *ngIf="isContentLoaded">
     <app-footer></app-footer>
 </div>

@@ -19,7 +19,6 @@ const routes: Routes = [
     path: '',
     component:IndexComponent,
     children: [
-      { path: '', redirectTo: '', pathMatch: 'full' },
       { path: '', component: HomeComponent },
       { path: 'home', component: HomeComponent },
       { path: 'about-us', component: AboutUsComponent },
