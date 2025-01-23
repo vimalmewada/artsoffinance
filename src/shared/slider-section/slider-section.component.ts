@@ -51,15 +51,15 @@ import { Component } from '@angular/core';
 export class SliderSectionComponent {
   images = [
     {
-      url: 'https://picsum.photos/1200/800?random=1',
+      url: 'assets/img/best.jpg',
       alt: 'Slide 1'
     },
     {
-      url: 'https://picsum.photos/1200/800?random=2',
+      url: 'assets/img/sebi.jpg', 
       alt: 'Slide 2'
     },
     {
-      url: 'https://picsum.photos/1200/800?random=3',
+      url: 'assets/img/nism.jpg',
       alt: 'Slide 3'
     }
   ];

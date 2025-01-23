@@ -24,7 +24,7 @@
                             <h5 class="title">Phase 1 (Basic)</h5>
                         </a>
                         <p class="disc">
-                            Sagitis himos pulvinar morb socis laoreet posuere enim non auctor etiam pretium libero
+                            A beginner-friendly course covering the fundamentals of stock trading, risk management, and market basics.
                         </p>
                         <a class="rts-read-more btn-primary" [routerLink]="['/courses', 'basic']"><i
                                 class="far fa-arrow-right"></i>Read
@@ -40,13 +40,13 @@
                         <img src="assets/images/service/icon/02.svg" alt="finbiz_service">
                     </div>
                     <div class="service-details">
-                        <a href="service-details.html">
+                        <a [routerLink]="['/courses', 'advance']">
                             <h5 class="title">Phase 2 (advance)</h5>
                         </a>
                         <p class="disc">
-                            Sagitis himos pulvinar morb socis laoreet posuere enim non auctor etiam pretium libero
+                            An advanced course focused on technical analysis, cryptocurrencies, and expert-level trading strategies.
                         </p>
-                        <a class="rts-read-more btn-primary" href="service-details.html"><i
+                        <a class="rts-read-more btn-primary" [routerLink]="['/courses', 'advance']"><i
                                 class="far fa-arrow-right"></i>Read
                             More</a>
                     </div>
@@ -64,7 +64,7 @@
                             <h5 class="title">Placement Assistance</h5>
                         </a>
                         <p class="disc">
-                            Sagitis himos pulvinar morb socis laoreet posuere enim non auctor etiam pretium libero
+                            Guiding you towards job opportunities with top financial firms through expert mentorship and industry connections.
                         </p>
                         <a class="rts-read-more btn-primary" [routerLink]="['/courses', 'placement']"><i
                                 class="far fa-arrow-right"></i>Read

@@ -4,8 +4,124 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CourseService {
+  //reserrved 1,2,3 ,4 for basic compelte course
   COURSES_LIST = {
-    basic: [],
+    basic: [
+      {
+        "id": 1,
+        "headline": "Phase 1: Comprehensive Trading Foundations",
+        "serviceDetails": {
+          "thumbnailSrc": "assets/img/course/course1.jpg",
+          "title": "Phase 1: Comprehensive Trading Foundations",
+          "price": "10,000",
+          "duration": "60 Hrs",
+          "description": "Phase 1: Comprehensive Trading Foundations is designed to provide you with essential trading knowledge and skills. You'll learn the fundamentals of the securities market, including support and resistance, live market trading platforms, and stock selection. The course also covers buying and short-selling strategies, risk management, and an introduction to blockchain and cryptocurrencies. By the end of this phase, you'll have a solid foundation to confidently progress to more advanced trading techniques and strategies.",
+          "aboutCourse": {
+            "aboutCourse": "Phase 1: Comprehensive Trading Foundations is a beginner-friendly course designed to lay the groundwork for a successful trading career. It covers key principles of stock market trading, from understanding support and resistance levels to mastering live market platforms for executing trades. You'll learn essential techniques for buying and short-selling, while also gaining critical insights into risk management to protect your investments. This course introduces you to the basics of the broader financial landscape, including blockchain and cryptocurrencies, providing you with a well-rounded foundation for the modern financial market. Whether you're a newcomer to trading or looking to sharpen your skills, this course offers the core knowledge needed to excel in the dynamic world of trading."
+          },
+          "features": [],
+          "courseOffering": {
+            "content": [
+              {
+                "topic": "Trading Realms: A Profound Journey",
+                "details": [
+                  "THE ENTIRE SECURITIES MARKET | SUPPORT, RESISTANCE",
+                  "LIVE MARKET TRADING PLATFORMS | STOCK SELECTION",
+                  "LIVE TRADING ENACTMENTS | BUYING, SHORT SELLING",
+                  "RISK MANAGEMENT | ALL BASICS"
+                ]
+              },
+              {
+                "topic": "Elite Stock Market Mastery",
+                "details": [
+                  "BLOCKCHAIN & CRYPTOCURRENCIES",
+                  "REGULATORY ENLIGHTENMENT",
+                  "INTRODUCTION TO ADVANCED TECHNICAL ANALYSIS",
+                  "ADVANCED TRADING PSYCHOLOGY",
+                  "TREND ANALYSIS | TRENDLINES",
+                  "Comprehensive Stock Market Mastery"
+                ]
+              },
+              {
+                "topic": "Comprehensive Stock Market Mastery",
+                "details": [
+                  "THE ENTIRE SECURITIES MARKET, BLOCKCHAIN & CRYPTOCURRENCIES",
+                  "REGULATORY ENLIGHTENMENT, TECHNICAL ANALYSIS, FUNDAMENTAL ANALYSIS",
+                  "LIVE MARKET TRADING PLATFORMS, SMART MONEY CONCEPT",
+                  "LIVE TRADING ENACTMENTS, RISK MANAGEMENT",
+                  "PSYCHOLOGY OF TRADING, FINANCIAL SCHEMATIC",
+                  "PORTFOLIO CRAFTSMANSHIP, TREND ANALYSIS, TRENDLINES"
+                ]
+              }
+            ]
+          },
+          "howWeWork": {
+            "content": [
+              "Your journey to mastering the art of stock trading begins now with Phase 1: Comprehensive Trading Foundations.",
+              "Enroll today to gain the essential skills and knowledge required to navigate the complex world of stock markets, risk management, and live trading platforms."
+            ]
+          },
+        }
+      }
+    ],
+    advance: [
+      {
+        "id": 2,
+        "headline": "Phase 2: Advanced Trading Mastery",
+        "serviceDetails": {
+          "thumbnailSrc": "assets/img/course/course2.jpg",
+          "title": "Phase 2: Advanced Trading Mastery",
+          "price": "15,000",
+          "duration": "80 Hrs",
+          "description": "Phase 2: Advanced Trading Mastery takes your trading knowledge to the next level, diving into advanced strategies such as options trading, volatility analysis, and expert-level technical analysis. Learn the intricacies of options pricing, Greeks, and income generation. Master risk management techniques and apply cutting-edge concepts like Exotic Options and Elliott Wave Theory for a well-rounded, sophisticated approach to trading.",
+          "aboutCourse": {
+            "aboutCourse": "Phase 2: Advanced Trading Mastery builds on the fundamentals from Phase 1 and introduces advanced techniques for professional traders. The course covers a deep dive into **chart mastery**, **pattern recognition**, **technical indicators**, and **oscillators**. You'll learn to navigate complex strategies like **options essentials**, **volatility dynamics**, and **income generation** through options. You'll also explore **modern portfolio theory**, **exotic options**, and **real-world applications**, giving you a comprehensive skill set to excel in the competitive world of stock trading."
+          },
+          "features": [],
+          "courseOffering": {
+            "content": [
+              {
+                "topic": "Technical Analysis Mastery",
+                "details": [
+                  "CHART MASTERY, PATTERN RECOGNITION",
+                  "TECHNICAL INDICATORS, OSCILLATORS",
+                  "CANDLESTICK ANALYSIS, ELLIOTT WAVE THEORY",
+                  "DOW THEORY, RISK MANAGEMENT",
+                  "PRACTICAL APPLICATION"
+                ]
+              },
+              {
+                "topic": "Options Unveiled Mastery",
+                "details": [
+                  "OPTIONS ESSENTIALS",
+                  "RISK MANAGEMENT, VOLATILITY DYNAMICS",
+                  "OPTIONS GREEKS",
+                  "OPTIONS AND INCOME GENERATION",
+                  "EXOTIC OPTIONS, REAL-WORLD APPLICATIONS"
+                ]
+              },
+              {
+                "topic": "Portfolio Construction Guide",
+                "details": [
+                  "PORTFOLIO THEORY",
+                  "MODERN PORTFOLIO THEORY - ASSET CLASSES",
+                  "RISK ASSESSMENT",
+                  "STRATEGIC VS. TACTICAL ALLOCATION, ASSET SELECTION",
+                  "ALTERNATIVE INVESTMENTS, REAL-WORLD APPLICATION"
+                ]
+              }
+            ]
+          },
+          "howWeWork": {
+            "content": [
+              "Your advanced journey to mastering stock trading starts now with Phase 2: Advanced Trading Mastery.",
+              "Enroll today to dive deep into options trading, risk management, and portfolio construction techniques for expert traders."
+            ]
+          }
+        }
+      }
+      
+    ],
     complete: [],
     placement: [
       {
@@ -821,11 +937,11 @@ export class CourseService {
   }
 
   getCourseById(id: number) {
-    const course = [...this.COURSES_LIST.basic, ...this.COURSES_LIST.complete, ...this.COURSES_LIST.placement].find(course => course.id === id);
+    const course = [...this.COURSES_LIST.basic, ...this.COURSES_LIST.complete,...this.COURSES_LIST.advance, ...this.COURSES_LIST.placement].find(course => course.id === id);
     return course || null;
   }
 
-  getCourseBySection(section: 'basic' | 'complete' | 'placement'): any[] {
+  getCourseBySection(section: 'basic' | 'complete' | 'advance' | 'placement'): any[] {
     return this.COURSES_LIST[section] || [];
   }
 
