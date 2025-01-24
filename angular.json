@@ -27,8 +27,7 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              "dist/artsoffinance"
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss"
