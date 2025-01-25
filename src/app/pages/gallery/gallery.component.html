@@ -54,7 +54,8 @@
       <h3 class="section-title">{{ section.title }}</h3>
       <div class="image-grid">
         <div *ngFor="let image of section.images" class="image-card">
-          <img [src]="image.url" [alt]="image.caption" class="gallery-image" loading="lazy">
+          <img [lazyLoad]="image.url" [alt]="image.caption" class="gallery-image" >
+
           <p class="image-caption">{{ image.caption }}</p>
         </div>
       </div>

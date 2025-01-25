@@ -18,6 +18,7 @@ import { CourseSectionComponent } from '../course-section/course-section.compone
 import { CoursesListComponent } from 'src/app/pages/courses/courses-list/courses-list.component';
 import { ViewCourseComponent } from 'src/app/pages/courses/view-course/view-course.component';
 import { SliderSectionComponent } from '../slider-section/slider-section.component';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { SliderSectionComponent } from '../slider-section/slider-section.compone
   ],
   imports: [
     CommonModule,
-    IndexRoutingModule
+    IndexRoutingModule,
+    LazyLoadImageModule
   ]
 })
 export class IndexModule { }
