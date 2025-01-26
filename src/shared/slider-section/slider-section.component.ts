@@ -33,6 +33,15 @@ import { Component } from '@angular/core';
       >
         <div class="slide" *ngFor="let image of images">
           <img [src]="image.url" [alt]="image.alt" draggable="false">
+            <div class="slide-content">
+            <div class="text-container">
+              <div *ngFor="let text of image.texts">
+                <div [class]="text.size === 'large' ? 'text-large' : 'text-small'">
+                  {{text.content}}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="slider-controls">
@@ -52,15 +61,28 @@ export class SliderSectionComponent {
   images = [
     {
       url: 'assets/img/best.jpg',
-      alt: 'Slide 1'
+      alt: 'Slide 1',
+      texts: [
+        { content: 'Passion of Winning a Trade', size: 'small' },
+        { content: 'Arts Of Finance', size: 'large' },
+        { content: 'Share Market Classes', size: 'small' }
+      ]
     },
     {
       url: 'assets/img/sebi.jpg', 
-      alt: 'Slide 2'
+      alt: 'Slide 2',
+      texts: [
+        { content: 'Honored by Ms. Madhabi Puri Buch Chairperson, SEBI', size: 'large' },
+        { content: 'I was deeply honored to be recognized by the current SEBI Chairperson for my contributions to the financial industry.', size: 'small' }
+      ]
     },
     {
       url: 'assets/img/nism.jpg',
-      alt: 'Slide 3'
+      alt: 'Slide 3',
+      texts: [
+        { content: 'Our Mentor is SEBI Registered', size: 'large' },
+        { content: 'Guiding you with expertise and trust for a secure financial future.', size: 'small' }
+      ]
     }
   ];
 
