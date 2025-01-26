@@ -18,51 +18,66 @@
 </div> -->
 <!-- end breadcrumb area -->
 <div class="rts-client-area ptb--100 client-bg">
-    <div class="container">
-        <div class="row">
-            <h4 class="title">Campus Gallery</h4>
-            <div class="col-12">
-                <div class="client-two-wrapper">
-                <button 
-  class="filter-button rts-btn" 
-  [ngClass]="{'btn-white': selectedFilter !== 'all', 'btn-primary-3': selectedFilter === 'all'}"
-  [class.active]="selectedFilter === 'all'"
-  (click)="setFilter('all')"
->
-  All
-</button>
+  <div class="container">
+    <div class="row">
+      <h4 class="title">Campus Gallery</h4>
+      <div class="col-12">
+        <div class="client-two-wrapper">
+          <button class="filter-button rts-btn"
+            [ngClass]="{'btn-white': selectedFilter !== 'all', 'btn-primary-3': selectedFilter === 'all'}"
+            [class.active]="selectedFilter === 'all'" (click)="setFilter('all')">
+            All
+          </button>
 
-<button 
-  *ngFor="let section of gallerySections" 
-  class="filter-button rts-btn" 
-  [ngClass]="{
+          <button *ngFor="let section of gallerySections" class="filter-button rts-btn" [ngClass]="{
     'btn-white': selectedFilter !== section.title, 
     'btn-primary-3': selectedFilter === section.title
-  }"
-  [class.active]="selectedFilter === section.title"
-  (click)="setFilter(section.title)"
->
-  {{ section.title }}
-</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="gallery-container">    
-    <div *ngFor="let section of filteredSections" class="gallery-section">
-      <h3 class="section-title">{{ section.title }}</h3>
-      <div class="image-grid">
-        <div *ngFor="let image of section.images" class="image-card">
-          <img [lazyLoad]="image.url" [alt]="image.caption" class="gallery-image" >
-
-          <p class="image-caption">{{ image.caption }}</p>
+  }" [class.active]="selectedFilter === section.title" (click)="setFilter(section.title)">
+            {{ section.title }}
+          </button>
         </div>
       </div>
     </div>
+  </div>
+</div>
+<div class="gallery-container">
+  <div *ngFor="let section of filteredSections" class="gallery-section">
+    <h3 class="section-title">{{ section.title }}</h3>
+    <div class="image-grid">
+      <div *ngFor="let image of section.images" class="image-card" (click)="openPreview(section, image)">
+        <img [lazyLoad]="image.url" [alt]="image.caption" class="gallery-image">
 
-    <div *ngIf="filteredSections.length === 0" class="no-results">
-      <p>No images found for the selected category.</p>
+        <p class="image-caption">{{ image.caption }}</p>
+      </div>
     </div>
   </div>
 
+  <div *ngIf="filteredSections.length === 0" class="no-results">
+    <p>No images found for the selected category.</p>
+  </div>
+
+
+  
+</div>
+
+
+<!-- Image Preview Modal -->
+<div class="preview-modal" *ngIf="previewImage" (click)="closePreview()">
+  <div class="preview-content" (click)="$event.stopPropagation()">
+    <button class="close-button" (click)="closePreview()">×</button>
+
+    <button class="nav-button prev" *ngIf="hasPrevious()" (click)="showPrevious()">
+      ‹
+    </button>
+
+    <div class="preview-image-container">
+      <img [src]="previewImage.url" [alt]="previewImage.caption" class="preview-image">
+      <p class="preview-caption">{{ previewImage.caption }}</p>
+      <p class="preview-section">{{ currentSection?.title }}</p>
+    </div>
+
+    <button class="nav-button next" *ngIf="hasNext()" (click)="showNext()">
+      ›
+    </button>
+  </div>
+</div>
