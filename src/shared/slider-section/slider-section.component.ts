@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-slider-section',
@@ -57,7 +57,7 @@ import { Component } from '@angular/core';
   `,
   styleUrls: ['./slider-section.component.scss']
 })
-export class SliderSectionComponent {
+export class SliderSectionComponent implements OnInit,OnDestroy  {
   images = [
     {
       url: 'assets/img/best.jpg',
@@ -91,7 +91,23 @@ export class SliderSectionComponent {
   startPos = 0;
   currentTranslate = 0;
   prevTranslate = 0;
+  autoSlideInterval: any;
 
+  ngOnInit(): void {
+    this.startAutoSlide();
+  }
+
+  ngOnDestroy(): void {
+    if (this.autoSlideInterval) {
+      clearInterval(this.autoSlideInterval);
+    }
+  }
+
+  startAutoSlide() {
+    this.autoSlideInterval = setInterval(() => {
+      this.next();
+    }, 2500); // Change slide every 1 second (1000 ms)
+  }
   startDrag(event: MouseEvent | TouchEvent) {
     this.isDragging = true;
     this.startPos = this.getPositionX(event);
@@ -139,8 +155,11 @@ export class SliderSectionComponent {
   }
 
   next() {
+    // If at the last slide, go back to the first slide
     if (this.currentIndex < this.images.length - 1) {
       this.currentIndex++;
+    } else {
+      this.currentIndex = 0; // Loop back to the first slide
     }
   }
 
