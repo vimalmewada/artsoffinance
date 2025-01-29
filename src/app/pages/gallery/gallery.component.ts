@@ -23,14 +23,19 @@ export class GalleryComponent {
     {
       title: 'Events & Activities',
       images: [
-        { url: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94', caption: 'Annual Science Fair' },
-        { url: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655', caption: 'Cultural Festival' },
-        { url: 'https://images.unsplash.com/photo-1511578314322-379afb476865', caption: 'Graduation Ceremony' },
+        { url: 'assets/img/pachmari/pachmari_1.jpeg', caption: 'pachmarhi tour' },
+        { url: 'assets/img/pachmari/pachmari_2.jpeg', caption: 'pachmarhi tour' },
+        { url: 'assets/img/pachmari/pachmari_3.jpeg', caption: 'pachmarhi tour' },
+        { url: 'assets/img/pachmari/pachmari_4.jpeg', caption: 'pachmarhi tour' },
       ]
     },
     {
       title: 'Classroom',
       images: [
+        { url: 'assets/img/classroom/class_1.jpeg', caption: 'Classroom' },
+        { url: 'assets/img/classroom/class_2.jpeg', caption: 'Classroom' },
+        { url: 'assets/img/classroom/class_3.jpeg', caption: 'Classroom' },
+        { url: 'assets/img/classroom/class_4.jpeg', caption: 'Classroom' },
         { url: 'assets/img/classroom/class3.jpeg', caption: 'Classroom' },
         { url: 'assets/img/classroom/class4.jpeg', caption: 'Classroom' },
       ]

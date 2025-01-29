@@ -19343,7 +19343,7 @@ p.disc.banner-para {
 }
 
 .background-service {
-  background-image: url(../images/service/bg-01.jpg);
+ background-image: url(../images/service/bg-01.jpg);
   padding: 70px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -20621,7 +20621,8 @@ p.disc.banner-para {
 }
 
 .cta-one-bg {
-  background-image: url(../images/cta/01.jpg);
+  /* background-image: url(../images/cta/01.jpg); */
+  background-image: url(../img/classroom/class_4.jpeg);
   background-repeat: no-repeat;
   background-color: #F64A00;
   background-blend-mode: multiply;
