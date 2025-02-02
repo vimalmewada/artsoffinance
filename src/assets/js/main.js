@@ -14,15 +14,15 @@
             this._html = $('html')
         },
         methods: function (e) {
-            imJs.swiperActivation();
-            imJs.vedioActivation();
-            imJs.counterUp();
-            imJs.salActive();
-            imJs.progressAvtivation();
+           // imJs.swiperActivation();
+         //   imJs.vedioActivation();
+          //  imJs.counterUp();
+          //  imJs.salActive();
+          //  imJs.progressAvtivation();
             imJs.stickyHeader();
             imJs.backToTopInit();
             imJs.typeJS();
-            imJs.searchOpton();
+           // imJs.searchOpton();
             imJs.menuActive();
             imJs.popupMobileMenu();
             imJs.preloader();
