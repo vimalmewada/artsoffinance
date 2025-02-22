@@ -10,6 +10,8 @@ export class CourseService {
       {
         "id": 1,
         "headline": "Phase 1: Comprehensive Trading Foundations",
+        "duration":"45days",
+        "fees": 12500,
         "serviceDetails": {
           "thumbnailSrc": "assets/img/course/course1.jpg",
           "title": "Phase 1: Comprehensive Trading Foundations",

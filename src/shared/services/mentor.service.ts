@@ -43,7 +43,7 @@ export class MentorService {
       "id": 2,
       "name": "Taha Rahi",
       "position": "Director and Mentor",
-      "img": 'assets/img/taha-sir-pic.jpg',
+      "img": 'assets/img/tahaSir.jpeg',
       "description": "Taha Rahi is a passionate financial markets enthusiast with a Post Graduation Diploma in Management (Securities Markets) from NISM. His internship at Kifin Technologies Ltd provided insights into the mutual fund industry and RTA operations. With multiple NISM certifications, Taha demonstrates expertise in the securities market. As a mentor and team leader, he promotes financial literacy through workshops and online sessions, while also designing trading courses.",
       "keySkills": [
         "Expertise in Live Stock Trading and Technical Analysis",

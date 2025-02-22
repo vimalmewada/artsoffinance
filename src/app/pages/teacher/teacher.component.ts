@@ -24,7 +24,7 @@ export class TeacherComponent {
     {
       id: 3,
       name: 'Gaurav Mishra',
-      position: 'ERM / Institutional Equities, IDBI Capital Investments',
+      position: 'Inspection offsite work in NSE INDIA',
       imageSrc: 'assets/img/guest3.jpeg',
       detailsLink: 'team-details.html'
     },

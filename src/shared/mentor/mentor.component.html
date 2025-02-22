@@ -1,8 +1,4 @@
-
-
-
-
-<div class="rts-team-area appoinment-team team-two mt--70" style="padding: 70px;">
+<!-- <div class="rts-team-area appoinment-team team-two mt--70" style="padding: 70px;">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -14,25 +10,13 @@
                 </div>
             </div>
         </div>
-   <!-- team area start-->
    
         <div class="row g-5" style="justify-content: center;">
-            <!-- team single start -->
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" *ngFor="let mentor of mentorList">
                 <div class="team-single-one-start">
                     <div class="team-image-area">
                         <a [routerLink]="['/mentor-profile', mentor.id]">
-                            <img src="{{mentor?.img}}" alt="Business_Team_single">
-                            <!-- <div class="team-social">
-                                <div class="main">
-                                    <i class="fal fa-plus"></i>
-                                </div>
-                                <div class="team-social-one">
-                                    <i class="fab fa-youtube"></i>
-                                    <i class="fab fa-pinterest-p"></i>
-                                    <i class="fab fa-instagram"></i>
-                                </div>
-                            </div> -->
+                            <img [src]="mentor?.img" alt="Business_Team_single">
                         </a>
                     </div>
                     <div class="single-details">
@@ -44,6 +28,49 @@
                 </div>
             </div>
         </div>
+    </div>
+    </div> -->
 
-    </div>
-    </div>
+
+    <section class="portfolio-area style-4 pt--120 pt_xs--60 pt_xs--60">
+        <div class="container" >
+            <div class="row mb--30" style="justify-content: center;">
+                <div class="col-12">
+                    <div class="rts-title-area team text-center">
+                        <p class="pre-title">
+                            Our Team
+                        </p>
+                        <h2 class="title">Meet Our Mentor
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-5" style="justify-content: center;">
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" *ngFor="let mentor of mentorList">
+                    <div class="team-single-one-start" >
+                      <div class="team-image-area">
+                        <a [routerLink]="['/mentor-profile', mentor.id]">
+                          <img [src]="mentor?.img" [alt]="mentor.name">
+                          <!-- <div class="team-social">
+                            <div class="main">
+                              <i class="fal fa-plus"></i>
+                            </div>
+                            <div class="team-social-one">
+                              <i class="fab fa-youtube"></i>
+                              <i class="fab fa-pinterest-p"></i>
+                              <i class="fab fa-instagram"></i>
+                            </div>
+                          </div> -->
+                        </a>
+                      </div>
+                      <div class="single-details">
+                        <a [routerLink]="['/mentor-profile', mentor.id]">
+                          <h5 class="title">{{ mentor.name }}</h5>
+                        </a>
+                        <p>{{ mentor.position }}</p>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </section>

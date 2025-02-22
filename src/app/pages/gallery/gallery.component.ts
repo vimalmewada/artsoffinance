@@ -23,10 +23,13 @@ export class GalleryComponent {
     {
       title: 'Events & Activities',
       images: [
-        { url: 'assets/img/pachmari/pachmari_1.jpeg', caption: 'pachmarhi tour' },
-        { url: 'assets/img/pachmari/pachmari_2.jpeg', caption: 'pachmarhi tour' },
-        { url: 'assets/img/pachmari/pachmari_3.jpeg', caption: 'pachmarhi tour' },
-        { url: 'assets/img/pachmari/pachmari_4.jpeg', caption: 'pachmarhi tour' },
+        { url: 'assets/img/event/pachmari/pachmari_1.jpeg', caption: 'pachmarhi tour' },
+        { url: 'assets/img/event/pachmari/pachmari_2.jpeg', caption: 'pachmarhi tour' },
+        { url: 'assets/img/event/event-anniversary/event_3.jpeg', caption: 'Investor Awareness Program' },
+        { url: 'assets/img/event/event-anniversary/event_4.jpeg', caption: 'Investor Awareness Program' },
+        { url: 'assets/img/event/event-anniversary/event_1.jpeg', caption: 'Birthday Celebration' },
+        { url: 'assets/img/event/event-anniversary/event_2.jpg', caption: 'Artsoffinance anniversary' },
+        
       ]
     },
     {
@@ -36,18 +39,18 @@ export class GalleryComponent {
         { url: 'assets/img/classroom/class_2.jpeg', caption: 'Classroom' },
         { url: 'assets/img/classroom/class_3.jpeg', caption: 'Classroom' },
         { url: 'assets/img/classroom/class_4.jpeg', caption: 'Classroom' },
-        { url: 'assets/img/classroom/class3.jpeg', caption: 'Classroom' },
-        { url: 'assets/img/classroom/class4.jpeg', caption: 'Classroom' },
+        { url: 'assets/img/classroom/class_5.jpeg', caption: 'Classroom' },
+        { url: 'assets/img/classroom/class_6.jpeg', caption: 'Classroom' },
       ]
     },
-    {
-      title: 'Teachers',
-      images: [
-        { url: 'assets/img/lokendra-pic.jpg', caption: 'Lokendra Sir' },
-        { url: 'assets/img/taha-sir-pic.jpg', caption: 'Taha Sir' },
+    // {
+    //   title: 'Teachers',
+    //   images: [
+    //     { url: 'assets/img/lokendra-pic.jpg', caption: 'Lokendra Sir' },
+    //     { url: 'assets/img/tahaSir.jpeg', caption: 'Taha Sir' },
       
-      ]
-    },
+    //   ]
+    // },
    
   ];
 
