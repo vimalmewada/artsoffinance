@@ -96,7 +96,7 @@
 //     right: 20px;
 //   }
 
-/* Add application styles & imports to this file! */
+
 .slider-container {
   width: 100%;
   position: relative;
@@ -127,7 +127,7 @@ overflow: hidden;
 }
 @media (min-width: 1024px) {
   .slide {
-    height: 450px; /* Or any fixed height you prefer for laptops/desktops */
+    height: 550px; /* Or any fixed height you prefer for laptops/desktops */
     padding-bottom: 0; /* Disable padding-based aspect ratio */
   }
 }
