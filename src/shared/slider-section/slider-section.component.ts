@@ -106,7 +106,7 @@ export class SliderSectionComponent implements OnInit,OnDestroy  {
   startAutoSlide() {
     this.autoSlideInterval = setInterval(() => {
       this.next();
-    }, 3500); // Change slide every 1 second (1000 ms)
+    }, 120000); // Change slide every 1 second (1000 ms)
   }
   startDrag(event: MouseEvent | TouchEvent) {
     this.isDragging = true;
