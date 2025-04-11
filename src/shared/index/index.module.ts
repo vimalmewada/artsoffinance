@@ -19,6 +19,8 @@ import { CoursesListComponent } from 'src/app/pages/courses/courses-list/courses
 import { ViewCourseComponent } from 'src/app/pages/courses/view-course/view-course.component';
 import { SliderSectionComponent } from '../slider-section/slider-section.component';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { SummerCampComponent } from 'src/app/pages/summer-camp/summer-camp.component';
+import { RazorpayComponent } from 'src/app/pages/summer-camp/razorpay/razorpay.component';
 
 
 @NgModule({
@@ -39,7 +41,9 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
     CourseSectionComponent,
     CoursesListComponent,
     ViewCourseComponent,
-    SliderSectionComponent
+    SliderSectionComponent,
+    SummerCampComponent,
+    RazorpayComponent
   ],
   imports: [
     CommonModule,

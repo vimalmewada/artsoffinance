@@ -12,6 +12,8 @@ import { MentorComponent } from '../mentor/mentor.component';
 import { MentorProfileComponent } from '../mentor/mentor-profile/mentor-profile.component';
 import { CoursesListComponent } from 'src/app/pages/courses/courses-list/courses-list.component';
 import { ViewCourseComponent } from 'src/app/pages/courses/view-course/view-course.component';
+import { SummerCampComponent } from 'src/app/pages/summer-camp/summer-camp.component';
+import { RazorpayComponent } from 'src/app/pages/summer-camp/razorpay/razorpay.component';
 
 const routes: Routes = [
 
@@ -29,6 +31,9 @@ const routes: Routes = [
       { path: 'mentor-profile/:id', component: MentorProfileComponent },
       { path: 'courses/:sectionName', component: CoursesListComponent },
       { path: 'courses/:sectionName/:id', component: ViewCourseComponent },
+      { path:'registration-summer-camp', component:SummerCampComponent},
+      { path:'registration-feePay', component:RazorpayComponent},
+      
     ],
   },
 
