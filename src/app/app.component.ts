@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GtagService } from './pages/services/gtag.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'artsoffinance';
+  constructor(private gtagService: GtagService) {}
 }

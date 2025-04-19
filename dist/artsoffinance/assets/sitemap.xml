@@ -6,6 +6,12 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+   <url>
+    <loc>https://artsoffinance.in/registration-summer-camp</loc>
+    <lastmod>2025-04-12T09:59:58.381Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://artsoffinance.in/home</loc>
     <lastmod>2025-03-14T14:59:58.381Z</lastmod>
@@ -48,4 +54,5 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
 </urlset>
