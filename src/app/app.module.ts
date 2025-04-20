@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { EventRegistrationComponent } from './pages/event-registration/event-registration.component';
 
 @NgModule({
   declarations: [

@@ -14,6 +14,7 @@ import { CoursesListComponent } from 'src/app/pages/courses/courses-list/courses
 import { ViewCourseComponent } from 'src/app/pages/courses/view-course/view-course.component';
 import { SummerCampComponent } from 'src/app/pages/summer-camp/summer-camp.component';
 import { RazorpayComponent } from 'src/app/pages/summer-camp/razorpay/razorpay.component';
+import { EventRegistrationComponent } from 'src/app/pages/event-registration/event-registration.component';
 
 const routes: Routes = [
 
@@ -33,6 +34,7 @@ const routes: Routes = [
       { path: 'courses/:sectionName/:id', component: ViewCourseComponent },
       { path:'registration-summer-camp', component:SummerCampComponent},
       { path:'registration-feePay', component:RazorpayComponent},
+      { path:'investor-awareness-event-registration', component:EventRegistrationComponent},
       
     ],
   },
