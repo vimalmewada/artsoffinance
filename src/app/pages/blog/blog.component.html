@@ -164,7 +164,7 @@
                     </div>
                     <div class="wized-body">
                         <div class="tags-wrapper">
-                            <a  *ngFor="let tag of allTags">{{ tag }}</a>
+                            <a  *ngFor="let tag of allTags | slice:0:10">{{ tag }}</a>
                         </div>
                     </div>
                 </div>
