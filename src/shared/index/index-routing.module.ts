@@ -15,12 +15,14 @@ import { ViewCourseComponent } from 'src/app/pages/courses/view-course/view-cour
 import { SummerCampComponent } from 'src/app/pages/summer-camp/summer-camp.component';
 import { RazorpayComponent } from 'src/app/pages/summer-camp/razorpay/razorpay.component';
 import { EventRegistrationComponent } from 'src/app/pages/event-registration/event-registration.component';
+import { BlogComponent } from 'src/app/pages/blog/blog.component';
+import { BlogDetailComponent } from 'src/app/pages/blog/blog-detail/blog-detail.component';
 
 const routes: Routes = [
 
   {
     path: '',
-    component:IndexComponent,
+    component: IndexComponent,
     children: [
       { path: '', component: HomeComponent },
       { path: 'home', component: HomeComponent },
@@ -32,10 +34,13 @@ const routes: Routes = [
       { path: 'mentor-profile/:id', component: MentorProfileComponent },
       { path: 'courses/:sectionName', component: CoursesListComponent },
       { path: 'courses/:sectionName/:id', component: ViewCourseComponent },
-      { path:'registration-summer-camp', component:SummerCampComponent},
-      { path:'registration-feePay', component:RazorpayComponent},
-      { path:'investor-awareness-event-registration', component:EventRegistrationComponent},
-      
+      // { path:'registration-summer-camp', component:SummerCampComponent},
+      { path: 'blog', component: BlogComponent },
+      { path: 'blog/category/:category', component: BlogComponent },
+      { path: 'blog-detail/:id', component: BlogDetailComponent },
+      { path: 'registration-feePay', component: RazorpayComponent },
+      { path: 'investor-awareness-event-registration', component: EventRegistrationComponent },
+
     ],
   },
 

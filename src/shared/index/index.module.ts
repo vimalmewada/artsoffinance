@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IndexComponent } from './index.component';
 import { IndexRoutingModule } from './index-routing.module';
@@ -22,6 +22,9 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { SummerCampComponent } from 'src/app/pages/summer-camp/summer-camp.component';
 import { RazorpayComponent } from 'src/app/pages/summer-camp/razorpay/razorpay.component';
 import { EventRegistrationComponent } from 'src/app/pages/event-registration/event-registration.component';
+import { BlogComponent } from 'src/app/pages/blog/blog.component';
+import { BlogDetailComponent } from 'src/app/pages/blog/blog-detail/blog-detail.component';
+import { MapLocatorComponent } from '../map-locator/map-locator.component';
 
 
 @NgModule({
@@ -46,11 +49,15 @@ import { EventRegistrationComponent } from 'src/app/pages/event-registration/eve
     SummerCampComponent,
     RazorpayComponent,
     EventRegistrationComponent,
+    BlogComponent,
+    BlogDetailComponent,
+    MapLocatorComponent
   ],
   imports: [
     CommonModule,
     IndexRoutingModule,
     LazyLoadImageModule
-  ]
+  ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class IndexModule { }

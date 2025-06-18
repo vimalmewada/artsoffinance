@@ -1,0 +1,235 @@
+<app-nav-bar></app-nav-bar>
+<!-- start breadcrumb area -->
+<div class="rts-breadcrumb-area breadcrumb-bg bg_image">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 breadcrumb-1">
+                <h1 class="title">Post Details</h1>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="bread-tag">
+                    <a href="index.html">Home</a>
+                    <span> / </span>
+                    <a href="#" class="active">Post Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end breadcrumb area -->
+
+<div class="rts-blog-list-area rts-section-gap">
+    <div class="container">
+        <div class="row g-5">
+            <!-- rts blo post area -->
+            <!-- blog-post.component.html -->
+            <div class="col-xl-8 col-md-12 col-sm-12 col-12">
+                <!-- single post -->
+                <div class="blog-single-post-listing details mb--0">
+                    <div class="thumbnail">
+                        <img [src]="blogPost.featuredImage" [alt]="blogPost.title">
+                    </div>
+
+                    <div class="blog-listing-content">
+                        <div class="user-info">
+                            <!-- single info -->
+                            <div class="single">
+                                <i class="far fa-user-circle"></i>
+                                <span>by {{blogPost.author.name}}</span>
+                            </div>
+                            <!-- single info end -->
+
+                            <!-- single info -->
+                            <div class="single">
+                                <i class="far fa-clock"></i>
+                                <span>{{blogPost.publishDate | date}}</span>
+                            </div>
+                            <!-- single info end -->
+
+                            <!-- single info -->
+                            <div class="single">
+                                <i class="far fa-tags"></i>
+                                <span>{{blogPost.categories.join(', ')}}</span>
+                            </div>
+                            <!-- single info end -->
+                        </div>
+
+                        <h3 class="title">{{blogPost.title}}</h3>
+
+                        <div *ngFor="let content of blogPost.content" [innerHTML]="renderContent(content)"></div>
+
+                        <div class="row align-items-center mt--5">
+                            <div class="col-lg-6 col-md-12">
+                                <!-- tags details -->
+                                <div class="details-tag">
+                                    <h6>Tags:</h6>
+                                    <button *ngFor="let tag of blogPost.tags">{{tag}}</button>
+                                </div>
+                                <!-- tags details end -->
+                            </div>
+
+                            <div class="col-lg-6 col-md-12">
+                                <div class="details-share">
+                                    <h6>Share:</h6>
+                                    <button *ngIf="blogPost?.socialSharing?.facebook"><i
+                                            class="fab fa-facebook-f"></i></button>
+                                    <button *ngIf="blogPost?.socialSharing?.pinterest"><i
+                                            class="fab fa-pinterest-p"></i></button>
+                                    <button *ngIf="blogPost?.socialSharing?.instagram"><i
+                                            class="fab fa-instagram"></i></button>
+                                    <button *ngIf="blogPost?.socialSharing?.linkedin"><i
+                                            class="fab fa-linkedin-in"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="author-area">
+                            <div class="thumbnail details mb_sm--15">
+                                <img [src]="blogPost?.author?.avatar" [alt]="blogPost?.author?.name">
+                            </div>
+
+                            <div class="author-details team">
+                                <span>{{blogPost?.authorBio?.role}}</span>
+                                <h5>{{blogPost?.authorBio?.name}}</h5>
+                                <p class="disc">{{blogPost?.authorBio?.bio}}</p>
+                            </div>
+                        </div>
+
+                        <!-- <div class="replay-area-details">
+        <h4 class="title">Leave a Reply</h4>
+        
+        <form>
+          <div class="row g-4">
+            <div *ngFor="let field of blogPost.commentForm.fields" class="col-lg-6" *ngIf="field.type !== 'textarea'; else textareaField">
+              <input [type]="field.type" [placeholder]="field.placeholder" [required]="field.required">
+            </div>
+            
+            <ng-template #textareaField>
+              <div class="col-12" *ngIf="field.type === 'textarea'">
+                <textarea [placeholder]="field.placeholder" [required]="field.required"></textarea>
+              </div>
+            </ng-template>
+          </div>
+        </form>
+      </div>
+      
+      <a class="rts-btn btn-primary" href="#">{{blogPost.commentForm.submitText}}</a> -->
+                    </div>
+                </div>
+                <!-- single post end -->
+            </div>
+            <!-- rts-blog post end area -->
+            <!--rts blog wizered area -->
+            <div class="col-xl-4 col-md-12 col-sm-12 col-12">
+                <!-- single wizered start -->
+                <!-- <div class="rts-single-wized search">
+                        <div class="wized-header">
+                            <h5 class="title">
+                                Search Hear
+                            </h5>
+                        </div>
+                        <div class="wized-body">
+                            <div class="rts-search-wrapper">
+                                <input class="Search" type="text" placeholder="Enter Keyword">
+                                <button><i class="fal fa-search"></i></button>
+                            </div>
+                        </div>
+                    </div> -->
+                <!-- single wizered End -->
+                <!-- single wizered start -->
+                <div class="rts-single-wized Categories">
+                    <div class="wized-header">
+                        <h5 class="title">
+                            Categories
+                        </h5>
+                    </div>
+                    <div class="wized-body">
+                        <!-- single categoris -->
+                        <ul class="single-categories" *ngFor="let category of categories">
+                            <li><a routerLink="/blog/category/{{ category }}">{{ category }} <i
+                                        class="far fa-long-arrow-right"></i></a></li>
+                        </ul>
+                        <!-- single categoris End -->
+                    </div>
+                </div>
+                <!-- single wizered End -->
+                <!-- single wizered start -->
+                <div class="rts-single-wized Recent-post">
+                    <div class="wized-header">
+                        <h5 class="title">
+                            Recent Posts
+                        </h5>
+                    </div>
+                    <div class="wized-body">
+                        <!-- recent-post -->
+                        <div class="recent-post-single" *ngFor="let blog of lastestBlog">
+                            <div class="thumbnail">
+                                <a routerLink="/blog-detail/{{blog.id}}"><img [src]="blog.featuredImage"
+                                        alt="Blog_post"></a>
+                            </div>
+                            <div class="content-area">
+                                <div class="user">
+                                    <i class="fal fa-clock"></i>
+                                    <span>{{ blog.publishDate | date:'dd MMM, yyyy' }}</span>
+                                </div>
+                                <a class="post-title" routerLink="/blog-detail/{{blog.id}}">
+                                    <h6 class="title">{{ blog.title | slice:0:40 }}...</h6>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- recent-post End -->
+
+                    </div>
+                </div>
+                <!-- single wizered End -->
+                <!-- single wizered start -->
+                <div class="rts-single-wized Recent-post">
+                    <div class="wized-header">
+                        <h5 class="title">
+                            Gallery Posts
+                        </h5>
+                    </div>
+                    <div class="wized-body">
+                        <div class="gallery-inner">
+                            <div class="row-1 single-row">
+                                <a *ngFor="let img of galleryImages.slice(0, 3)"><img [src]="img" alt="Gallery"></a>
+                            </div>
+                            <div class="row-2 single-row">
+                                <a *ngFor="let img of galleryImages.slice(3, 6)"><img [src]="img" alt="Gallery"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- single wizered End -->
+                <!-- single wizered start -->
+                <div class="rts-single-wized">
+                    <div class="wized-header">
+                        <h5 class="title">
+                            Popular Tags
+                        </h5>
+                    </div>
+                    <div class="wized-body">
+                        <div class="tags-wrapper">
+                            <a *ngFor="let tag of allTags | slice:0:5">{{ tag }}</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- single wizered End -->
+                <!-- single wizered start -->
+                <div class="rts-single-wized contact">
+                    <div class="wized-header">
+                        <a><img src="assets/img/logo1.png" alt="Business_logo"></a>
+                    </div>
+                    <div class="wized-body">
+                        <h5 class="title">Need Help? We Are Here
+                            To Help You</h5>
+                        <a class="rts-btn btn-primary" href="/contact">Contact Us</a>
+                    </div>
+                </div>
+                <!-- single wizered End -->
+            </div>
+            <!-- rts- blog wizered end area -->
+        </div>
+    </div>
+</div>
+<!-- rts blog mlist area End -->
